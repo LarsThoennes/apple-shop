@@ -1,0 +1,29 @@
+.img-fluid {
+    height: 400px !important;
+    max-width: 1000px !important;
+    width: auto !important;
+}
+
+.description-card {
+    width: 1000px;
+    height: 500px;
+}
+
+.card-head-description {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.card-feet-description {
+    display: flex;
+    justify-content: end;
+    padding-right: 16px;
+}
+
+.col-md-8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: normal;
+}

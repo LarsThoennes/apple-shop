@@ -20,6 +20,11 @@
     transform: scale(1.05);
 }
 
+.shopping-cart-image {
+    height: 30px;
+    width: auto;
+}
+
 /*FOOTER*/
 
 .navbar-container-footer {

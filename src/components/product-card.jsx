@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "../styles/product.css";
 
-class ProductCard extends Component {
-    state = {  } 
-    render() { 
-        return <div className="card" style={{ width: '18rem' }}>
-        <img src={"assets/images/" + this.props.folder + "/" + this.props.image}  className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{this.props.title}</h5>
-          <p className="card-text">{this.props.description}</p>
-          <div className='card-feet'>
-            <div>{this.props.price} €</div>
-            <button onClick={this.props.onAdd} className="btn btn-primary">Hinzufügen</button>
-          </div>
+
+const ProductCard = ({ title, price, image, folder, description, onAdd, toggleProductCard }) => {
+    return (
+        <div onClick={toggleProductCard} className="card main-product-card-view" style={{ width: '18rem' }}>
+            <img src={`assets/images/${folder}/${image}`} className="card-img-top" alt={title} />
+            <div className="card-body">
+                <h5 className="card-title">{title}</h5>
+                <p className="card-text">{description}</p>
+                <div className='card-feet'>
+                    <div>{price} €</div>
+                    <button onClick={(e) => { e.stopPropagation(); onAdd(); }} className="btn btn-primary">Hinzufügen</button>
+                </div>
+            </div>
         </div>
-      </div>
-      ;
-    }
-}
- 
+    );
+};
+
 export default ProductCard;

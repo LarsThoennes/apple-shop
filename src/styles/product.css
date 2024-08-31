@@ -1,20 +1,22 @@
-.card {
+.main-product-card-view {
     border: 1px solid rgb(173, 171, 171);
     cursor: pointer;
     overflow: hidden;
     box-sizing: border-box;
     transition: border 0.3s ease, transform 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover {
+.main-product-card-view:hover {
     border: 1px solid black; 
+    filter: brightness(1.05);
 }
 
-.card img {
+.main-product-card-view img {
     transition: transform 0.3s ease; 
 }
 
-.card:hover img {
+.main-product-card-view:hover img {
     animation: product-hover 0.7s ease-in-out;
     transform: scale(1.1);
 }
