@@ -1,0 +1,16 @@
+.navbarHead {
+    background-color: rgb(188, 191, 193) !important;
+}
+
+.container-fluid {
+    width: 1540px;
+}
+
+.shopping-cart-button {
+    border: none;
+    background-color: transparent;
+}
+
+.shopping-cart-button:hover {
+    transform: scale(1.05);
+}

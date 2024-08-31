@@ -1,0 +1,11 @@
+.distance-line {
+    width: 130px;
+    height: 2px;
+    background-color: rgb(188, 191, 193);
+    margin-top: 6px;
+}
+
+.shopping-cart {
+    width: 20vw;
+    min-width: 300px; 
+}
