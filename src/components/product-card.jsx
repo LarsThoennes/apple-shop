@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "../styles/product.css";
 
-class Product extends Component {
+class ProductCard extends Component {
     state = {  } 
     render() { 
         return <div className="card" style={{ width: '18rem' }}>
@@ -19,4 +19,4 @@ class Product extends Component {
     }
 }
  
-export default Product;
+export default ProductCard;

@@ -1,3 +1,8 @@
+.navbar-container {
+    background-color: rgb(188, 191, 193);
+    height: 100px;
+}
+
 .navbarHead {
     background-color: rgb(188, 191, 193) !important;
 }
@@ -13,4 +18,10 @@
 
 .shopping-cart-button:hover {
     transform: scale(1.05);
+}
+
+/*FOOTER*/
+
+.navbar-container-footer {
+    padding-top: 60px;
 }
