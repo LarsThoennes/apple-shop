@@ -33,6 +33,17 @@
     gap: 16px;
 }
 
+.card-warning {
+    width: 80vw;
+    max-width: 1440px;
+}
+
+.card-header-warning {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @media screen and (max-width: 850px) {
     .product-container {
         flex-direction: column;

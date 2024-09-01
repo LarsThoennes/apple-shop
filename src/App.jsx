@@ -5,11 +5,13 @@ import ProductSection from './components/product-section';
 import ShoppingCart from './components/shopping-cart';
 import Footer from './components/footer';
 import ProductDetail from './components/product-details';
+import WarningCard from './components/warning-card';
 
 class App extends Component {
     state = { 
         items: [],
         showCart: false,
+        warningCard: true,
         selectedProduct: null
     } 
 
@@ -35,6 +37,10 @@ class App extends Component {
 
     toggleCart = () => {
         this.setState({ showCart: !this.state.showCart }); 
+    }
+
+    toggleWarningCart = () => {
+        this.setState({ warningCard: !this.state.warningCard }); 
     }
 
     toggleProductCard = (product) => {
@@ -69,9 +75,16 @@ class App extends Component {
                             <ShoppingCart items={this.state.items} toggleCart={this.toggleCart}/>
                         </div>
                     )}
+
                     {this.state.selectedProduct && (
                         <div className="shopping-cart-overlay">
                             <ProductDetail product={this.state.selectedProduct} onClose={this.closeProductDetail}/>
+                        </div>
+                    )}
+
+                    {this.state.warningCard && (
+                        <div className="shopping-cart-overlay">
+                            <WarningCard items={this.state.items} toggleWarningCart={this.toggleWarningCart}/>
                         </div>
                     )}
                 </div>
