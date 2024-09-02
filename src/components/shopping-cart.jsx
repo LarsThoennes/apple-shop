@@ -27,7 +27,9 @@ class ShoppingCart extends Component {
                                     alt={item.name} 
                                 />
                                 <div className='cart-item-details'>
-                                    <div>{item.amount} x {item.name} {item.price.toFixed(2)}€</div>
+                                    <div>{item.amount} x {item.name} {item.basePrice.toFixed(2)}€</div>
+                                    <div>{item.ram}</div>
+                                    <div>{item.storageSpace}</div>
                                 </div>
                             </div>
                             <div className='distance-line'></div>
@@ -44,7 +46,7 @@ class ShoppingCart extends Component {
 
                 {items.length > 0 && (
                     <div className='shopping-cart-feet'>
-                        <span>Gesamtpreis: {this.props.items.reduce((total, item) => total + item.price, + 5.99, 0).toFixed(2)}€</span>
+                        <span>Gesamtpreis: {this.props.items.reduce((total, item) => total + item.basePrice, + 5.99, 0).toFixed(2)}€</span>
                         <button className='btn btn-primary'>Bestellen</button>
                     </div>
                 )}

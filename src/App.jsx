@@ -15,24 +15,27 @@ class App extends Component {
         selectedProduct: null
     } 
 
-    addItem = (amount, name, price, image, folder) => {
+    addItem = (amount, name, basePrice, image, folder, ram, storageSpace) => {
         let currentItems = [...this.state.items];
         let existingItem = this.state.items.find(item => item.name === name);
         if (existingItem) {
             existingItem.amount++;
-            existingItem.price = price * existingItem.amount;
+            existingItem.basePrice = basePrice * existingItem.amount;
         } else {
             currentItems.push({
                 amount, 
                 name, 
-                price: price * amount,
+                basePrice: basePrice * amount,
                 image,
-                folder
+                folder,
+                ram,
+                storageSpace
             });
             console.log(currentItems);
         }
-        const totalPrice = currentItems.reduce((total, item) => total + item.price, 0);
+        const totalPrice = currentItems.reduce((total, item) => total + item.basePrice, 0);
         this.setState({ items: currentItems, totalPrice });
+        this.closeProductDetail()
     }
 
     toggleCart = () => {
@@ -52,6 +55,7 @@ class App extends Component {
     }
 
     render() { 
+
         return (
             <React.Fragment>
                 <Navbar items={this.state.items} toggleCart={this.toggleCart} />
@@ -78,13 +82,13 @@ class App extends Component {
 
                     {this.state.selectedProduct && (
                         <div className="shopping-cart-overlay">
-                            <ProductDetail product={this.state.selectedProduct} onClose={this.closeProductDetail}/>
+                            <ProductDetail product={this.state.selectedProduct} onClose={this.closeProductDetail} onAdd={this.addItem}/>
                         </div>
                     )}
 
                     {this.state.warningCard && (
                         <div className="shopping-cart-overlay">
-                            <WarningCard items={this.state.items} toggleWarningCart={this.toggleWarningCart}/>
+                            <WarningCard toggleWarningCart={this.toggleWarningCart}/>
                         </div>
                     )}
                 </div>
